@@ -8,6 +8,7 @@
     margin-bottom: 25px;
     justify-content: space-between;
     align-items: center;
+    height: 50px;
 }
 
 .btn{
@@ -21,3 +22,23 @@
 .btn:hover{
     background:#847a7ab8 ;
 }
+
+.imageLogo img {
+    width: 100px; /* Ajusta el valor según tus necesidades */
+    height: auto; /* Esto asegura que la altura se ajuste automáticamente según las proporciones originales */
+    padding-top: 30px;
+}
+/* .imageLogo {
+    
+    display: flex;
+gap: 15px;
+margin-left: 25px;
+align-items: center;
+width: 100px;
+    height: 100px;
+}
+
+img {
+    width: 300px;
+    height: 80px;
+} */

@@ -18,6 +18,7 @@ const getVideogamesAPI = async () => {
                 id: game.id,
                 name: game.name,
                 background_image: game.background_image,
+                rating: game.rating,
                 parent_platforms: game.parent_platforms.map(item => item.platform.name).join(', '),
                 genres: game.genres.map((genre) => genre.name).join(', '),
                 createdDB: false

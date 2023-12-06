@@ -8,6 +8,7 @@ let initialState = {
     filters: {
         genre: '',     
         order: 'name',  
+        rating: '', 
         source: ''
     }
 }
@@ -69,6 +70,13 @@ const rootReducer = (state = initialState, action) => {
             }
             if (filters.order === "DescendenteNombre") {
                 filteredResult.sort((a, b) => b.name.localeCompare(a.name));
+            }
+            
+            if (filters.rating === "AscRating") {
+                filteredResult.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+            }
+            if (filters.rating === "DescRating") {
+                filteredResult.sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating));
             }
             
             return {
