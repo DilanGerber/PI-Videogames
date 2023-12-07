@@ -2,52 +2,52 @@ const validation = (error) => {
     const errors = {};
     
     if (error.name.length < 2) {
-        errors.name = "Minimum two characters";
+        errors.name = "Minimo 2 caracteres";
     }
     if (error.name.length > 20) {
-        errors.name = "Maximum 20 characters";
+        errors.name = "Maximo 20 caracteres";
     }
     if (/[^a-zA-Z0-9\s]+/.test(error.name)) {
-        errors.name = "Invalid characters";
+        errors.name = "El nombre contiene caracteres invalidos";
     }
     
     
     if (!/^(http|https):\/\/[^ "]+$/.test(error.background_image)) {
-        errors.background_image = "The image is not a valid URL";
+        errors.background_image = "La URL de imagen no es valida";
     }
     
     
     if (!/^[a-zA-Z,\s]*$/.test(error.description_raw)) {
-        errors.description_raw = "The description is invalid";
+        errors.description_raw = "La descripción tiene caracteres no validos";
     }
     if (error.description_raw.length < 10) {
-        errors.description_raw = "The description is very short";
+        errors.description_raw = "La descripción es demasiado corta";
     }
     
     if(error.description_raw.length > 120) {
-        errors.description_raw = "Description should be less than or equal to 120 characters"
+        errors.description_raw = "La descripción no debe ser mayor a 120 caracteres"
     }
     
     
     if (!/^(1(\.0)?|[2-4](\.\d+)?|5(\.0)?)$/.test(error.rating)) {
-        errors.rating = "Must be decimal between 1-5";
+        errors.rating = "La valoración debe ser un numero entre 1 a 5";
     }
     
     
     if (error.parent_platforms.length < 1) {
-        errors.parent_platforms = "Minimun one platforms";
+        errors.parent_platforms = "Minimo se requiere una plataforma";
     }
     
     if (error.released) {
         const currentDate = new Date();
         const selectedDate = new Date(error.released);
         if (selectedDate > currentDate) {
-            errors.released = "The release date cannot be in the future";
+            errors.released = "El lanzamiento no puede ser en el futuro";
         }
     }
     
     if (error.genres.length < 1) {
-        errors.genres = "Minimun one genres";
+        errors.genres = "Minimo se requiere un genero";
     }
 
         return errors;

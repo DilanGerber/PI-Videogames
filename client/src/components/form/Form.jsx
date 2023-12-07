@@ -84,6 +84,11 @@ const handlerChange = (event) => {
       rating: "",
       genres: []
     })
+    alert("El juego se creó correctamente")
+    navigate('/home')
+
+
+    navigate('/home')
   }
 
 
@@ -96,7 +101,7 @@ const handlerChange = (event) => {
       {console.log(state)}
       {/* {console.log(allPlatforms)} */}
       {/* {console.log(allPlatforms)} */}
-        <form onSubmit={handlerSubmit} >
+        <form onSubmit={handlerSubmit}  >
           <label htmlFor="">Nombre:</label>
           <input name='name' onChange={handlerChange} type="text" />
           {error.name && <p className='parrafo'>{error.name}</p>}
@@ -116,11 +121,11 @@ const handlerChange = (event) => {
           {error.background_image && <p className='parrafo'>{error.background_image}</p>}
           
           <label htmlFor="">Fecha de lanzamiento:</label>
-          <input name='released' onChange={handlerChange} type="text" />
+          <input name='released' onChange={handlerChange} type="date" />
           {error.released && <p className='parrafo'>{error.released}</p>}
           
           <label htmlFor="">Puntuación:</label>
-          <input name='rating' onChange={handlerChange} type="text" />
+          <input name='rating' onChange={handlerChange} type="number" min={1} max={5} />
           {error.rating && <p className='parrafo'>{error.rating}</p>}
           
           <label htmlFor="">Generos:</label>

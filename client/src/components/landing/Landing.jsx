@@ -34,7 +34,7 @@ const Landing = () => {
           <button className='bienvenida' onClick={() => navigate('/home')}>Inicio</button>
         </div>
 
-          <div>
+          <div className='contBanner'>
             <img className='imgBan' src={require('../../imagenes/PI VIDEOGAMES.png')} alt="" />
           </div>
       </div>
