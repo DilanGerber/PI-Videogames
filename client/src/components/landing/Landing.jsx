@@ -1,20 +1,42 @@
 import React from 'react'
 import {  useNavigate } from 'react-router-dom';
+import './Landing.css'
 
 const Landing = () => {
 
   const navigate = useNavigate()
 
   return (
-      <div>
-          <button onClick={() => navigate('/home')}>Inicio</button>
+      <div className='landing'>
+        
           
-          <img src="https://media.rawg.io/media/games/310/3106b0e012271c5ffb16497b070be739.jpg" alt="" />
-          <img src="https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg" alt="" />
-          <img src="https://media.rawg.io/media/games/c6b/c6bfece1daf8d06bc0a60632ac78e5bf.jpg" alt="" />
-          <img src="https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg" alt="" />
-          <img src="https://media.rawg.io/media/games/b7d/b7d3f1715fa8381a4e780173a197a615.jpg" alt="" />
-          
+          <div class="contenedorSlinder">
+            <div class="contenedorInputs">
+              <input type="radio" name="slinder" id="item-1" />
+              <input type="radio" name="slinder" id="item-2" checked/>
+              <input type="radio" name="slinder" id="item-3" />
+
+              <div class="cards">
+                <label class="card" for="item-1" id="selector-1">
+                  <img className='imgSli' src="https://media.rawg.io/media/games/587/587588c64afbff80e6f444eb2e46f9da.jpg" alt="" />
+                </label>
+                <label class="card" for="item-2" id="selector-2">
+                  <img className='imgSli' src={require('../../imagenes/Diseño_sin_título__28_-removebg-preview.png')} alt="" />
+                </label>
+                <label class="card" for="item-3" id="selector-3">
+                  <img className='imgSli' src="https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg" alt="" />
+                </label>
+              </div>
+            </div>
+          </div>
+
+        <div className='containerBienvenida'>
+          <button className='bienvenida' onClick={() => navigate('/home')}>Inicio</button>
+        </div>
+
+          <div>
+            <img className='imgBan' src={require('../../imagenes/PI VIDEOGAMES.png')} alt="" />
+          </div>
       </div>
   )
 }
