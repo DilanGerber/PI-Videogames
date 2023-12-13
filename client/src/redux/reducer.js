@@ -9,7 +9,8 @@ let initialState = {
         genre: '',     
         order: 'name',  
         rating: '', 
-        source: ''
+        source: '',
+        boton3: 3
     }
 }
 
@@ -48,10 +49,10 @@ const rootReducer = (state = initialState, action) => {
             }   
 
         case FILTER:
-            const { filterType, value} = action.payload;
+            const { filterType, value} = action.payload
         
-            let filters = { ...state.filters, [filterType]: value };
-            let filteredResult = [...state.allVideogamesBackUp];
+            let filters = { ...state.filters, [filterType]: value }
+            let filteredResult = [...state.allVideogamesBackUp]
         
             if(filters.source === 'API'){
                 filteredResult = filteredResult.filter((game)=> game.createdDB === false )
@@ -62,23 +63,27 @@ const rootReducer = (state = initialState, action) => {
             if (filters.genre) {
                 filteredResult = filteredResult.filter((game) =>
                     game.genres.includes(filters.genre)
-                );
+                )
             }
 
             if (filters.order === "AscendenteNombre") {
-                filteredResult.sort((a, b) => a.name.localeCompare(b.name));
+                filteredResult.sort((a, b) => a.name.localeCompare(b.name))
             }
             if (filters.order === "DescendenteNombre") {
-                filteredResult.sort((a, b) => b.name.localeCompare(a.name));
+                filteredResult.sort((a, b) => b.name.localeCompare(a.name))
             }
             
             if (filters.rating === "AscRating") {
-                filteredResult.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+                filteredResult.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating))
             }
             if (filters.rating === "DescRating") {
-                filteredResult.sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating));
+                filteredResult.sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating))
             }
             
+            if(filters.boton3 === 3) {
+                filteredResult = filteredResult.filter((game) => Math.floor(game.rating) == 3)
+            }
+
             return {
                 ...state,
                 allVideogames: filteredResult,
