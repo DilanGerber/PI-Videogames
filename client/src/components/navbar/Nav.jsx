@@ -7,7 +7,6 @@ import Order from '../order/Order';
 import Reset from '../reset/Reset';
 import './Nav.css'
 import Ratings from '../ratings/Ratings';
-import BotonVivo from '../botonEnVivo/botonVivo';
 
 const Nav = () => {
 
@@ -24,7 +23,6 @@ const Nav = () => {
       <Order />
       <Ratings />
       <Reset />
-      <BotonVivo />
       <button className='btn' onClick={() => navigate('/create')}>Crear Juego</button>
     </div>
   )

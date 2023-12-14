@@ -9,8 +9,7 @@ let initialState = {
         genre: '',     
         order: 'name',  
         rating: '', 
-        source: '',
-        boton3: 3
+        source: ''
     }
 }
 
@@ -78,10 +77,6 @@ const rootReducer = (state = initialState, action) => {
             }
             if (filters.rating === "DescRating") {
                 filteredResult.sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating))
-            }
-            
-            if(filters.boton3 === 3) {
-                filteredResult = filteredResult.filter((game) => Math.floor(game.rating) == 3)
             }
 
             return {
