@@ -1,6 +1,7 @@
 import React from 'react'
 import {  useNavigate } from 'react-router-dom';
 import './ErrorPage.css'
+import Footer from '../footer/Footer';
 
 const ErrorPage = () => {
   const navigate = useNavigate()
@@ -12,6 +13,7 @@ const ErrorPage = () => {
       <div className='contError'>
         <img className='error' src={require('../../imagenes/PAGINA NO ENCONTRADA.png')} alt="" />
       </div>
+      <Footer />
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom'
 import { clearDetail, getVideogameById } from '../../redux/actions'
 import './Detail.css'
+import Footer from '../footer/Footer'
 
 const Detail = () => {
 
@@ -39,6 +40,7 @@ const Detail = () => {
         <p className='description_raw'><span className='span'>Description:{" "}</span>{detail.description_raw}</p>
       </div>
       </div>
+      <Footer />
     </div>
   )
 }
