@@ -1,4 +1,4 @@
-.loader {
+/* .loader {
     color: #FFF;
     position: relative;
     display: inline-block;
@@ -7,4 +7,19 @@
     font-size: 48px;
     letter-spacing: 4px;
     box-sizing: border-box;
+} */
+
+.loaderContainer {
+    /* background-color: black; */
+    width: 250px;
+    height: 300px;
+    border: #ffffff 2px solid;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    margin: 5px;
+    margin-bottom: 50px;
 }

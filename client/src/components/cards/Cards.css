@@ -14,3 +14,12 @@
     gap: 50px;
 }
 
+/* margin: 10px;
+    margin-bottom: 50px; */
+
+.cardsContainerLoader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* padding-left: 30px; */
+}

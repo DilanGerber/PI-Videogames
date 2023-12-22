@@ -32,7 +32,9 @@ const Cards = () => {
   return (
     <div >
       {loading ? (
-        <Loading />
+        <div className='cardsContainerLoader'>
+          {Array.from(new Array(10)).map((item) => <Loading key={item} />)}
+        </div>
       ) : (
         <div>
           <div className='cardsContainer'>
