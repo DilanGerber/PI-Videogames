@@ -97,6 +97,7 @@ const handlerChange = (event) => {
       <div className='containerBoooton'>
         <button className='btnn' onClick={() => navigate('/home')}>Volver a Inicio</button>
       </div>
+      <div className='created'>
       <div className='formContainer'>
       {console.log(state)}
       {/* {console.log(allPlatforms)} */}
@@ -137,6 +138,24 @@ const handlerChange = (event) => {
           <button className='boton' disabled={disable()} type="submit"> Crear Juego </button>
 
         </form>
+        </div>
+
+        <div className='previewContainer'>
+          <h2>Vista previa:</h2>
+          <div className='previewForm'>
+            <div>
+              <img src={state.background_image} alt="game" />
+            </div>
+            <div>
+              <h1>{state.name}</h1>
+              <h2><span className='span'>Plataforms:{" "}</span>{state.parent_platforms.join(', ')}</h2>
+              <h2><span className='span'>Genres:{" "}</span>{state.genres.join(', ')}</h2>
+              <h2><span className='span'>Released:{" "}</span>{state.released}</h2>
+              <h2><span className='span'>Rating:{" "}</span>{state.rating}</h2>
+              <p><span className='span'>Description:{" "}</span>{state.description_raw}</p>
+            </div>
+          </div>
+        </div>
         </div>
     </div>
   )
