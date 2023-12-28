@@ -24,8 +24,8 @@ const validation = (error) => {
         errors.description_raw = "La descripción es demasiado corta";
     }
     
-    if(error.description_raw.length > 120) {
-        errors.description_raw = "La descripción no debe ser mayor a 120 caracteres"
+    if(error.description_raw.length > 300) {
+        errors.description_raw = "La descripción no debe ser mayor a 300 caracteres"
     }
     
     

@@ -143,11 +143,11 @@ const handlerChange = (event) => {
         <div className='previewContainer'>
           <h2>Vista previa:</h2>
           <div className='previewForm'>
-            <div>
-              <img src={state.background_image} alt="game" />
+            <div className='contentImg'>
+              <img src={state.background_image} alt="game" className='imgForm' />
             </div>
-            <div>
-              <h1>{state.name}</h1>
+            <div className='contentDetail'>
+              <h1 className='h1form'>{state.name}</h1>
               <h2><span className='span'>Plataforms:{" "}</span>{state.parent_platforms.join(', ')}</h2>
               <h2><span className='span'>Genres:{" "}</span>{state.genres.join(', ')}</h2>
               <h2><span className='span'>Released:{" "}</span>{state.released}</h2>
